@@ -1,0 +1,41 @@
+name: Feature suggestion
+
+title: 'MIF - '
+description: Send a feature suggestion
+
+labels:
+  - enhancement
+
+body:
+  - type: mardown
+    attributes:
+      value: |
+        Thanks for your feature idea, give us please all informations about your idea!
+      
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. @einswurmi
+    validations:
+      required: false
+
+  - type: textarea
+    id: the-idea
+    attributes:
+      label: Your idea
+      description: Give s here all informations about your idea
+      placeholder: I have the idea for a...
+      value: "I would like to see a very cool feature in here."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](CODE_OF_CONDCUT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

@@ -1,0 +1,35 @@
+name: Release
+
+on:
+    push:
+        branches:
+            - react
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions: { }
+
+jobs:
+    release:
+        permissions:
+            contents: write
+            issues: write
+            pull-requests: write
+        
+        name: Release
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - uses: ./.github/ci-setup/setup-node.yml
+
+            - name: Create release pull-request or publish to npm
+              uses: changesets/action@v1
+              with:
+                publish: npm release
+                version: npm version-package
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                NPM_TOKEN: ${{ secrets.NPM_SECRET }}
