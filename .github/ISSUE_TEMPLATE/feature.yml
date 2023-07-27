@@ -1,13 +1,13 @@
 name: Feature suggestion
 
 title: 'MIF - '
-description: Send a feature suggestion
+description: 'Send a feature suggestion'
 
 labels:
   - enhancement
 
 body:
-  - type: mardown
+  - type: markdown
     attributes:
       value: |
         Thanks for your feature idea, give us please all informations about your idea!

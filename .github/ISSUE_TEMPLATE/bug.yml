@@ -1,13 +1,13 @@
 name: Bug Report
 
 title: 'MIB - '
-description: Create a bug report
+description: 'Create a bug report'
 
 labels:
   - bug
 
 body:
-  - type: mardown
+  - type: markdown
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
@@ -39,7 +39,7 @@ body:
     validations:
       required: false
   
-  - type: drodown
+  - type: dropdown
     id: version
     attributes:
       label: Version
